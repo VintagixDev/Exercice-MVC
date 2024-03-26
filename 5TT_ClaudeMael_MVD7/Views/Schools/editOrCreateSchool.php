@@ -29,7 +29,7 @@
                     <input type="tel" placeholder="Numéro de téléphone" class="form-control" id="numero_de_telephone" name="numero_de_telephone" required value="<?php if(isset($school)) :?><?=$school->$schoolNumero ?><?php endif?>">
                 </div>
 
-
+                
                 <div>
                     <select name="options[]" id="options-select" multiple>
                         <?php foreach ($options as $option) : ?>

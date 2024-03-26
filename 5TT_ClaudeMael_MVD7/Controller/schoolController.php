@@ -52,6 +52,7 @@ elseif(isset($_GET["schoolId"]) && $uri === "/updateEcole?schoolId=" . $_GET["sc
     require_once("Views/base.php");
 }
 elseif(isset($_GET["schoolId"]) && $uri === "/deleteEcole?schoolId=" . $_GET["schoolId"]){
+    
     deleteOptionSchool($pdo);
     deleteOneSchool($pdo);
     header("location:/mesEcoles");
