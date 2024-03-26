@@ -79,6 +79,18 @@ function DeleteUser($pdo){
     }
 }
 
+function deleteOptionsSchoolFromUser($pdo){
+    try{
+        $query = 'delete from option_ecole where schoolId in (select schoolId from school where utilisateurId = :utilisateurId';
+        $deleteAllSchoolsFromId = $pdo->prepare($query);
+        $deleteAllSchoolsFromId->execute([
+            'utilisateurId' => $_SESSION["user"]->id
+        ]);
+    }catch(PDOException $e){
+        die($e->getMessage());
+    }
+}
+
 function updateSession($pdo){
     try{
         $query = 'select * from utilisateurs where id = :id';
